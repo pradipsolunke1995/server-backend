@@ -33,4 +33,5 @@ jobs:
       with:
         context: .
         push: true
-        tags: pradipsolunke/server:db-server, pradipsolunke/server:db-server:${{github.run_number}}
+        tags: pradipsolunke/db-server:latest, pradipsolunke/db-server:${{github.run_number}}
+       
