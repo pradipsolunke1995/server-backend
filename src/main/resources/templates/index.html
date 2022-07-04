@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ServerData</title>
+</head>
+<body>
+<h1>Server Information</h1>
+<hr>
+<table border="1">
+    <thead>
+    <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>Language</td>
+        <td>Framework</td>
+        <td>Edit</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${data.empty}">
+        <td colspan="4">Data not available in DB</td>
+    </tr>
+    <tr th:each="data: ${data}">
+        <td th:text="${data.id}"></td>
+        <td th:text="${data.name}"></td>
+        <td th:text="${data.language}"></td>
+        <td th:text="${data.framework}"></td>
+        <td> <a href="saveData?id=${data.id}">update</a> </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
